@@ -1,3 +1,117 @@
+
+
+
+
+
+export const createTable = (parentElement) => {
+    let dati=null;
+    let istance;
+    let callback;
+  istance ={
+    
+   setcallback:(cb)=>{
+callback=cb;
+   },
+    render: () => {
+     
+              let html = `
+                        <div class="container">
+      <form class="inserimento">
+    
+  
+  <input type="number" id="X"aria-label="X" class="form-control in" placeholder="X">
+  <input type="number" id="Y"aria-label="Y" class="form-control in"placeholder="Y">
+      <button type="button" id="Aggiungi" class="btn btn-dark" >Aggiungi</button>
+      <button type="button" id="Calcola" class="btn btn-success">Calcola</button>
+  <input id="file" name="file" class="form-control "placeholder="Insercisci CSV"type="file" single>
+  <button type="button" id="CaricaCSV" class="btn btn-dark b1"><img class="i-upload" src="assets/images/csv.png" alt="tab" /> Aggiungi da CSV</button>
+    </form>
+
+    
+    <div class="mt-4" id="tab">
+        <table class="table table-bordered tabellina radius">
+            <thead class="table-dark titolo">
+                <tr >
+                <th scope="col" class="px-6 py-3">
+                       ora
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Lunedì
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Martedì
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Mercoledì
+                    </th>
+                     <th scope="col" class="px-6 py-3">
+                        Giovedì
+                    </th>
+                     <th scope="col" class="px-6 py-3">
+                        Venerdì
+                    </th>
+                </tr>
+            </thead>
+            <tbody >`;
+            let ora=8;
+            for(let i=0;i<dati.x.length;i++){
+                
+                html+= `
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">` +
+ora+
+`</th>
+<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">` +
+dati[i].l +
+`</th>
+<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">` +
+dati[i].ma +
+`</th>
+<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">` +
+dati[i].me +
+`</th>
+<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">` +
+dati[i].g+
+`</th>
+<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">` +
+dati[i].v +
+`</th>
+                    
+                </tr>`;
+                ora+=1;
+            }
+
+             
+
+              html += `
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                        `;
+
+              parentElement.innerHTML = html;
+
+    },
+    
+    load: function () {
+        return fetch("/lin")
+            .then(response => response.json())
+            .then(json => {
+                console.info("sono qui dentro ");
+                dati = json.dati;
+                istance.render();
+                return json;
+            })
+            .catch(error => { throw error; });
+    }
+    
+  };
+  return istance;
+};
+
+
+/*
 const get = 'https://ws.cipiaceinfo.it/cache/get';
 
 const createTabella = (parentElement) => {
@@ -79,7 +193,7 @@ for(let i=0;i<chiaviCache.lenght;i++){
     if(chiavi_dizionario[j])
     }
 }
-    */
+    ///-------------------
 
 
 
@@ -227,3 +341,4 @@ const prendiDati = (myKey, myToken) => {
 }
 main();
 
+*/
