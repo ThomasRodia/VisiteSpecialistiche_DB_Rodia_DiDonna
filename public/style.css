@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .specialty-tab {
+    padding: 10px 20px;
+    margin-right: 5px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .specialty-tab.active {
+    background-color: black;
+    color: white;
+  }
+
+  .book-button {
+    padding: 10px 20px;
+    background-color: #2ecc71; /* Colore verde */
+    color: white; /* Testo bianco */
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transizione per effetto hover */
+  }
+  
+  .book-button:hover {
+    background-color: #27ae60; /* Colore verde più scuro al passaggio del mouse */
+  }
+
+  .table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.table th {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.table td {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.table tr:nth-child(even) td {
+    background-color: #f0f0f0;
+}
+
+.table tr:hover td {
+    background-color: #e0e0e0;
+}
+
+.table th:first-child, .table td:first-child {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+}
+
+.table th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.table th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.table tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+
+.table tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+
+ 
+  
+  
+ 
+  
+  
+  
