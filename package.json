@@ -1,0 +1,27 @@
+{
+  "name": "visite_speialistiche_db_rodia_didonna",
+  "version": "1.0.0",
+  "description": "progetto migliorato con server",
+  "main": "index.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomasRodia/VisiteSpecialistiche_DB_Rodia_DiDonna.git"
+  },
+  "author": "Rodia Di Donna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThomasRodia/VisiteSpecialistiche_DB_Rodia_DiDonna/issues"
+  },
+  "homepage": "https://github.com/ThomasRodia/VisiteSpecialistiche_DB_Rodia_DiDonna#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "mysql2": "^3.12.0",
+    "path": "^0.12.7"
+  }
+}
